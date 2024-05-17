@@ -58,3 +58,58 @@ a{
 alert{
     
 }
+@media only screen and (max-width:600px) {
+    .LayoutLogin{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 700px;
+        margin: 50px 0px 0px 15px;
+        box-shadow: 0px 15px 10px 0px #1700175e;
+         
+        
+     }
+     .LayoutLogin img{
+        width: 300px;
+        height: 140px;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        
+        padding: 0px 10px;
+        
+    }
+    section h1{
+        font-size: 18px;
+        text-align: center;
+    }
+    section p{
+        font-family: Poppins;
+        text-align: center;
+        width: 240px;
+        margin: auto;
+        font-size: 12px;
+        
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        font-family: Poppins;
+        font-size: 12px;
+    }
+    input{
+        width: 240px;
+        padding: 12px;
+        margin: 0px 0px 20px 0px;
+    }
+    a{
+        text-decoration: none;
+        font-family: Poppins;
+        font-size: 12px;
+        color: #804B67;
+    }
+}

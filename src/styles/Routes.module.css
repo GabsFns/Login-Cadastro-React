@@ -30,3 +30,13 @@ li > a{
     
 }
 
+@media only screen and (max-width:600px) {
+    li > a{
+        flex-direction: column;
+        font-size: 10px;
+        
+    }
+    .SidebarElement{
+        padding: 10px; 
+    }
+}
