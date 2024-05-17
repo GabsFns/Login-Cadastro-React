@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+.LayoutLogin{
+   display: flex;
+   width: 800px;
+   height: 600px;
+   margin: 100px 0px 0px 300px;
+   box-shadow: 0px 15px 10px 0px #1700175e;
+    
+   
+}
+.LayoutLogin img{
+    width: 400px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    
+    padding: 20px;
+    
+}
+section h1{
+    font-family: Roboto;
+    font-size: 28px;
+    margin: 0;
+}
+section p{
+    font-family: Poppins;
+    font-size: 12px;
+    margin: 20px 0px 60px 0px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-family: Poppins;
+    font-size: 12px;
+}
+input{
+    width: 250px;
+    padding: 12px;
+    margin: 0px 0px 20px 0px;
+}
+a{
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 12px;
+    color: #804B67;
+}
+alert{
+    
+}

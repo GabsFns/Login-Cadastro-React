@@ -1,0 +1,40 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+.LayoutAbaConfig{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 30px;
+    width: 800px;
+}
+.LayoutArray{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 0px 160px;
+    font-family: Poppins;
+
+    box-shadow: 0px 10px 10px 0px #1700175e;
+    
+}
+.AbaConfigTitle{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.LayoutAbaConfig p{
+    margin: 0px 0px 40px 0px;
+    
+
+}
+figure{
+    margin: 0px 40px 0px 0px;
+}

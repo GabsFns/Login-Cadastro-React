@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+.SidebarElement{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+    
+    
+    
+}
+li{
+    list-style: none;
+    
+}
+li > a{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: Poppins;
+    font-size: 18px;
+    
+}
+

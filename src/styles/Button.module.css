@@ -1,0 +1,28 @@
+@font-face {
+   font-family: Roboto;
+   src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+   font-family: Poppins;
+   src: url(../fonts/Poppins-Regular.ttf);
+}
+/*
+#170017;
+ #291149;
+ #F1DCD0;
+    #4F2956;
+ #804B67;
+ #D6AFAB;
+*/
+.BttLayout{
+   border: none;
+   background-color: #291149;
+   width: 100px;
+   padding: 8px;
+   border-radius: 40px;
+   color: white;
+   text-align: center;
+   font-family: Poppins;
+   margin: 40px 0px;
+   cursor: pointer;
+}
