@@ -11,7 +11,7 @@ function Register(){
     const [senha, setSenha] = useState("");
     const [phone, setPhone] = useState("");
     const [nome, setNome] = useState("");
-    const [RegistroON, setRegistroON] = useState(false);
+    
   
     async function EnviarDados(evento) {
       evento.preventDefault();
@@ -34,7 +34,7 @@ function Register(){
   
         if (response.ok) {
           alert("Registro bem-sucedido");
-          setRegistroON(true);
+          
         } else {
           alert(data.message);
         }
