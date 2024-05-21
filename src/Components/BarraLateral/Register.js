@@ -1,4 +1,4 @@
-import BttLoginCad from "../form/buttons"
+import stylebtt from "../../styles/Button.module.css"
 import styles from "../../styles/Layout.module.css"
 import fundologcad from "../../images/FundoLogCad.jpg"
 
@@ -92,7 +92,7 @@ function Register(){
                 <input type="email" name="email" value={email} onChange={(evento) => setEmail(evento.target.value)}></input>
                 <label>Type your password:</label>
                 <input type="password" name="senha" value={senha} onChange={(evento) => setSenha(evento.target.value)}></input>
-                <BttLoginCad />
+                <button className={stylebtt.BttLayout} onClick={EnviarDados} type="submit">Login</button>
             </form>
         </section>
         </div> 
