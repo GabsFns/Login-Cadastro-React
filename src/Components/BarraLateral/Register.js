@@ -83,7 +83,7 @@ function Register(){
             <section>
                 <h1>Register</h1>
                 <p>Welcome again, fill in the credentials to log in</p>
-            <form onSubmit={EnviarDados}>
+            <form>
                 <label>Type your Name:</label>
                 <input type="text" name="nome" value={nome} onChange={(evento) => setNome(evento.target.value)}></input>
                 <label>Type your Phone:</label>
