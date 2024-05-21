@@ -1,31 +1,64 @@
 import BttLoginCad from "../form/buttons"
 import styles from "../../styles/Layout.module.css"
 import fundologcad from "../../images/FundoLogCad.jpg"
+
 import { useState } from "react";
 import { motion } from "framer-motion"
 function Register(){
-
-    
-
-
-
-
     const Fundo = fundologcad;
-
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [phone, setPhone] = useState("");
     const [nome, setNome] = useState("");
-
-function EnviarDados(evento){
-    evento.preventDefault();
-    
-    if(email === "" || senha === "" || phone === "" || nome === ""){
-        alert("Preencha todos os campos")
+    const [RegistroON, setRegistroON] = useState(false);
+  
+    async function EnviarDados(evento) {
+      evento.preventDefault();
+  
+      if (email === "" || senha === "" || phone === "" || nome === "") {
+        alert("Preencha todos os campos");
         return;
+      }
+  
+      try {
+        const response = await fetch("http://localhost:5000/api/usuarios/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name: nome, email, telefone: phone, senha }),
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          alert("Registro bem-sucedido");
+          setRegistroON(true);
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error("Erro ao fazer registro:", error);
+      }
     }
-}
+    function handlePhoneChange(event) {
+        const phoneValue = event.target.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+        let formattedPhone = '';
+      
+        if (phoneValue.length > 0) {
+          formattedPhone = `(${phoneValue.slice(0, 2)})`;
+          if (phoneValue.length > 2) {
+            formattedPhone += ` ${phoneValue.slice(2, 7)}`;
+          }
+          if (phoneValue.length > 7) {
+            formattedPhone += `-${phoneValue.slice(7, 11)}`;
+          }
+        }
+      
+        setPhone(formattedPhone);
+      }
+   
 
     return(
 
@@ -54,7 +87,7 @@ function EnviarDados(evento){
                 <label>Type your Name:</label>
                 <input type="text" name="nome" value={nome} onChange={(evento) => setNome(evento.target.value)}></input>
                 <label>Type your Phone:</label>
-                <input type="text" name="phone" value={phone} onChange={(evento) => setPhone(evento.target.value)}></input>
+                <input type="text" name="phone" value={phone} onChange={handlePhoneChange}></input>
                 <label>Type your Email:</label>
                 <input type="email" name="email" value={email} onChange={(evento) => setEmail(evento.target.value)}></input>
                 <label>Type your password:</label>

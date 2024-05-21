@@ -10,11 +10,33 @@ function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  function EnviarDados(evento) {
+  async function EnviarDados(evento) {
     evento.preventDefault();
     if (email === "" || senha === "") {
       alert("Preencha todos os campos");
       return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/usuarios/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, senha }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Login bem-sucedido");
+        // Aqui você pode salvar o token no localStorage ou em algum state global
+        localStorage.setItem('token', data.token);
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
     }
   }
   return (
