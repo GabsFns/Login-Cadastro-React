@@ -15,8 +15,8 @@ function Register(){
   
     async function EnviarDados(evento) {
       evento.preventDefault();
-  
-      if (email === "" || senha === "" || phone === "" || nome === "") {
+      const phoneValue = phone.replace(/\D/g, '');
+      if (email === "" || senha === "" ||  phoneValue === "" || nome === "") {
         alert("Preencha todos os campos");
         return;
       }
