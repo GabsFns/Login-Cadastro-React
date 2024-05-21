@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import styleElem from "../../styles/Routes.module.css"
 import styleBar from "../../styles/BarraLateral.module.css"
 import { DiAptana } from "react-icons/di";
