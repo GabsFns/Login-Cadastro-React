@@ -72,7 +72,7 @@ function Settings() {
           >
             <figure>{item.icon}</figure>
             <div className={styles.AbaConfigTitle}>
-              <h2>{item.title} className={styles.icon}</h2>
+              <h2>{item.title} {styles.icon}</h2>
               <p>{item.description}</p>
             </div>
           </motion.div>

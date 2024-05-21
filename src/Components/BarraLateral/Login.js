@@ -3,12 +3,14 @@ import styles from "../../styles/Layout.module.css";
 import fundologcad from "../../images/FundoLogCad.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const Fundo = fundologcad;
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
   async function EnviarDados(evento) {
     evento.preventDefault();
@@ -28,9 +30,9 @@ function Login() {
 
       const data = await response.json();
 
-      if (response.ok) {
+      if (response) {
         alert("Login bem-sucedido");
-        // Aqui você pode salvar o token no localStorage ou em algum state global
+        navigate("/Dashboard");
         localStorage.setItem('token', data.token);
       } else {
         alert(data.message);
