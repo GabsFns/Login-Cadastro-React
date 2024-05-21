@@ -20,8 +20,8 @@ function Register(){
     const phoneValue = phone.replace(/\D/g, '');
     if (email === "" || senha === "" || phoneValue === "" || nome === "") {
       alert("Preencha todos os campos");
-      return;
-    }
+      
+    }else{
 
     try {
       const response = await fetch("http://localhost:5000/api/usuarios/register", {
@@ -34,7 +34,7 @@ function Register(){
 
       const data = await response.json();
 
-      if (response) {
+      if (response.ok) {
         alert("Registro bem-sucedido");
         navigate("/Dashboard");
       } else {
@@ -44,7 +44,7 @@ function Register(){
       console.error("Erro ao fazer registro:", error);
     }
   }
-
+  }
   function handlePhoneChange(event) {
     const phoneValue = event.target.value.replace(/\D/g, '');
     let formattedPhone = '';

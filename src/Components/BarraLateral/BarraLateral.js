@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import styleElem from "../../styles/Routes.module.css"
 import styleBar from "../../styles/BarraLateral.module.css"
 import { DiAptana } from "react-icons/di";
@@ -32,7 +32,7 @@ function BarraLateral({ isLoggedIn }) {
 
             {isLoggedIn && (
             <li>
-              <Link to="/dashboard"><DiAptana size={25}/> DASHBOARD</Link>
+              <Link to="/Dashboard"><DiAptana size={25}/> DASHBOARD</Link>
             </li>
              )}
         </ul>
@@ -40,7 +40,7 @@ function BarraLateral({ isLoggedIn }) {
           <Route path="/" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Settings" element={<Settings />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
       </div>

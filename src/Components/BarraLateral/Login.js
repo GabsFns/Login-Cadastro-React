@@ -16,8 +16,8 @@ function Login() {
     evento.preventDefault();
     if (email === "" || senha === "") {
       alert("Preencha todos os campos");
-      return;
-    }
+      
+    }else{
 
     try {
       const response = await fetch("http://localhost:5000/api/usuarios/login", {
@@ -29,18 +29,21 @@ function Login() {
       });
 
       const data = await response.json();
-
-      if (response) {
+      alert("Buscando...");
+      if (response.ok) {
         alert("Login bem-sucedido");
         navigate("/Dashboard");
         localStorage.setItem('token', data.token);
+        return;
       } else {
         alert(data.message);
+        alert("Erro no Login");
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error);
     }
   }
+}
   return (
     <motion.div
       initial={{
